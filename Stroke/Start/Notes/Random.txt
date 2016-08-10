@@ -1,0 +1,7 @@
+StartRandom will pick semi-randomly which dommes are available and will:
+
+A) Pick the only domme available
+B) Tell you (rarely) none are available *wait an hour*
+C) Let sub pick between multiple dommes that are available
+D) Have one domme rush in excitedly for sub *special session*
+E) Resume with previous domme if requested *overrides others*
