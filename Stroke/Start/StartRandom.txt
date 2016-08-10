@@ -1,0 +1,173 @@
+(FirstRun)
+@NullResponse @CheckFlag(NotFirstRun)
+FIRST RUN TEXT
+(NotFirstRun)
+@NullResponse @RapidCodeOn
+@NullResponse @RemoveDomme
+@NullResponse @CheckFlag(ResumeD)
+@NullResponse @CheckFlag(Resume1)
+@NullResponse @CheckFlag(Resume2)
+@NullResponse @CheckFlag(Resume3)
+@NullResponse @DeleteVar[Domme]
+@NullResponse @Goto(NoResume)
+(ResumeD)
+#StartStroking @StartStroking
+@End
+(Resume1)
+@Contact1 
+#StartStroking @StartStroking
+@End
+(Resume2)
+@Contact2 
+#StartStroking @StartStroking
+@End
+(Resume3)
+@Contact3
+#StartStroking @StartStroking
+@End
+(NoResume)
+@NullResponse @CheckFlag(NoDomme)
+@NullResponse @Chance05(Q0)
+@NullResponse @Goto(Q1,Q2,Q3,Q4)
+(NoDomme)
+@NullResponse @CheckDate(NoDomme,Waited)
+No one is online right now, you should try waiting until the hour is up.
+@NullResponse @Wait(10)
+@NullResponse @EndTease
+@End
+(Waited)
+@NullResponse @Chance10(Q00)
+@NullResponse @DeleteFlag(NoDomme)
+@NullResponse @Goto(Q1,Q2,Q3,Q4)
+(Q0)
+@SystemMessage No one is online right now, you should try back after at least an hour has passed. @SetDate(NoDomme,1 hour)
+@NullResponse @Wait(10)
+@NullResponse @EndTease
+@End
+(Q00)
+@SystemMessage No one is online right now, you should try back after at least another hour has passed. @SetDate(NoDomme,1 hour)
+@NullResponse @Wait(10)
+@NullResponse @EndTease
+@End
+(Q1)
+@NullResponse @Goto(1D,11,12,13)
+(Q2)
+@NullResponse @Goto(2D1,2D2,2D3,212,213,223)
+(Q3)
+@NullResponse @Goto(3D12,3D13,3D23,3123)
+(Q4)
+@NullResponse @Goto(4D123)
+(1D)
+
+#StartStroking @StartStroking
+@End
+(11)
+@Contact1 
+#StartStroking @StartStroking
+@End
+(12)
+@Contact2 
+#StartStroking @StartStroking
+@End
+(13)
+@Contact3 
+#StartStroking @StartStroking
+@End
+(2D1)
+@SystemMessage #DomName and #Contact1 are Online.
+@NullResponse @Goto(DStart,1Start,D1Choose)
+(D1Choose)
+@SystemMessage Who would you like to start a session with?
+[#DomName] @SystemMessage Beginning Session... @Goto(DStart)
+[#Contact1] @SystemMessage Beginning Session... @Goto(1Start)
+@DifferentAnswer @SystemMessage Invalid Person - Please enter the contact's name
+(2D2)
+@SystemMessage #DomName and #Contact2 are Online.
+@NullResponse @Goto(DStart,2Start,D2Choose)
+(D2Choose)
+@SystemMessage Who would you like to start a session with?
+[#DomName] @SystemMessage Beginning Session... @Goto(DStart)
+[#Contact2] @SystemMessage Beginning Session... @Goto(2Start)
+@DifferentAnswer @SystemMessage Invalid Person - Please enter the contact's name
+(2D3)
+@SystemMessage #DomName and #Contact3 are Online.
+@NullResponse @Goto(DStart,3Start,D3Choose)
+(D3Choose)
+@SystemMessage Who would you like to start a session with?
+[#DomName] @SystemMessage Beginning Session... @Goto(DStart)
+[#Contact3] @SystemMessage Beginning Session... @Goto(3Start)
+@DifferentAnswer @SystemMessage Invalid Person - Please enter the contact's name
+(212)
+@SystemMessage #Contact1 and #Contact2 are Online.
+@NullResponse @Goto(1Start,2Start,12Choose)
+(12Choose)
+@SystemMessage Who would you like to start a session with?
+[#Contact1] @SystemMessage Beginning Session... @Goto(1Start)
+[#Contact2] @SystemMessage Beginning Session... @Goto(2Start)
+@DifferentAnswer @SystemMessage Invalid Person - Please enter the contact's name
+(213)
+@SystemMessage #Contact1 and #Contact3 are Online.
+@NullResponse @Goto(1Start,3Start,13Choose)
+(13Choose)
+@SystemMessage Who would you like to start a session with?
+[#Contact1] @SystemMessage Beginning Session... @Goto(1Start)
+[#Contact3] @SystemMessage Beginning Session... @Goto(3Start)
+@DifferentAnswer @SystemMessage Invalid Person - Please enter the contact's name
+(223)
+@SystemMessage #Contact2 and #Contact3 are Online.
+@NullResponse @Goto(2Start,3Start,23Choose)
+(23Choose)
+@SystemMessage Who would you like to start a session with?
+[#Contact2] @SystemMessage Beginning Session... @Goto(2Start)
+[#Contact3] @SystemMessage Beginning Session... @Goto(3Start)
+@DifferentAnswer @SystemMessage Invalid Person - Please enter the contact's name
+(3D12)
+@SystemMessage #DomName, #Contact1, and #Contact2 are Online.
+@NullResponse @Goto(DStart,1Start,2Start,D12Choose)
+(D12Choose)
+@SystemMessage Who would you like to start a session with?
+[#DomName] @SystemMessage Beginning Session... @Goto(DStart)
+[#Contact1] @SystemMessage Beginning Session... @Goto(1Start)
+[#Contact2] @SystemMessage Beginning Session... @Goto(2Start)
+@DifferentAnswer @SystemMessage Invalid Person - Please enter the contact's name
+(3D13)
+@SystemMessage #DomName, #Contact1, and #Contact3 are Online.
+@NullResponse @Goto(DStart,1Start,3Start,D13Choose)
+(D13Choose)
+@SystemMessage Who would you like to start a session with?
+[#DomName] @SystemMessage Beginning Session... @Goto(DStart)
+[#Contact1] @SystemMessage Beginning Session... @Goto(1Start)
+[#Contact3] @SystemMessage Beginning Session... @Goto(3Start)
+@DifferentAnswer @SystemMessage Invalid Person - Please enter the contact's name
+(3D23)
+@SystemMessage #DomName, #Contact2, and #Contact3 are Online.
+@NullResponse @Goto(DStart,2Start,3Start,D23Choose)
+(D23Choose)
+@SystemMessage Who would you like to start a session with?
+[#DomName] @SystemMessage Beginning Session... @Goto(DStart)
+[#Contact2] @SystemMessage Beginning Session... @Goto(2Start)
+[#Contact3] @SystemMessage Beginning Session... @Goto(3Start)
+@DifferentAnswer @SystemMessage Invalid Person - Please enter the contact's name
+(3123)
+@SystemMessage #Contact1, #Contact2, and #Contact3 are Online.
+@NullResponse @Goto(1Start,2Start,3Start,123Choose)
+(123Choose)
+@SystemMessage Who would you like to start a session with?
+[#Contact1] @SystemMessage Beginning Session... @Goto(1Start)
+[#Contact2] @SystemMessage Beginning Session... @Goto(2Start)
+[#Contact3] @SystemMessage Beginning Session... @Goto(3Start)
+@DifferentAnswer @SystemMessage Invalid Person - Please enter the contact's name
+(4D123)
+@SystemMessage #DomName, #Contact1, #Contact2, and #Contact3 are Online.
+@NullResponse @Goto(DStart,1Start,2Start,3Start,D123Choose)
+(D123Choose)
+@SystemMessage Who would you like to start a session with?
+[#DomeName] @SystemMessage Beginning Session... @Goto(DStart)
+[#Contact1] @SystemMessage Beginning Session... @Goto(1Start)
+[#Contact2] @SystemMessage Beginning Session... @Goto(2Start)
+[#Contact3] @SystemMessage Beginning Session... @Goto(3Start)
+@DifferentAnswer @SystemMessage Invalid Person - Please enter the contact's name
+(DStart)
+(1Start)
+(2Start)
+(3Start)
