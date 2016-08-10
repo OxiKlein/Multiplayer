@@ -1,0 +1,11 @@
+#TaskEdges is replaced with a number in range of letter tasks section in settings
+#TaskStrokes is strokes setting
+#TaskHours time between 1 and domme level in hours
+#TaskMinutes time between 5 and 13 times the domme's level in minutes
+#TaskSeconds time between 10 and 30 times the domme's level times a random number between 1 and domme's level in seconds
+#TaskAmountLarge 2 * rand(15,26) * dommeLevel
+#TaskAmountSmall 0.5 * rand(5,11) * dommeLevel
+#TaskAmount rand(15,26) * dommeLevel
+#TaskStrokingTime time between specified stroking times
+#TaskHoldTheEdgeTime time between specified edge hold times
+#TaskCBTTime time between specified cbt times
